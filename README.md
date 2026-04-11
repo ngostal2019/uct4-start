@@ -1,2 +1,2 @@
 # uct4-start
-Let's get start with GitHub together
+Let's get started with GitHub together
