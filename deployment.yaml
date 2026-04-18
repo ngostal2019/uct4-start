@@ -4,7 +4,8 @@ metadata:
   name: example-deployment
   labels:
     app1: uct4
-    managed-by: Helm
+    managed-by: terraform
+    deployed-version: v1.0.0
 spec:
   replicas: 3
   selector:
