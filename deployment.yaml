@@ -4,6 +4,7 @@ metadata:
   name: example-deployment
   labels:
     app1: uct4
+    managed-by: Helm
 spec:
   replicas: 3
   selector:
