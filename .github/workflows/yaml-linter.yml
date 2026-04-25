@@ -1,0 +1,23 @@
+# Set the actions' name
+name: Yaml File Linter
+
+# Event trigger
+on:
+  push:
+    branches:
+        - "main"
+        - "hotfix/staline"
+
+jobs:
+    pull_repo:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Collection info
+            run: |
+                lsb_release -a
+                nproc
+                whoami
+                pwd
+                ls -la
+          - name: Pull my repository
+            uses: actions/checkout@v6
