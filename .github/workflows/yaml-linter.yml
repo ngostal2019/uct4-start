@@ -6,7 +6,7 @@ on:
   push:
     branches:
         - "main"
-        - "hotfix/staline"
+        - "hotfix/**"
 
 jobs:
     pull_repo:
@@ -15,7 +15,9 @@ jobs:
           - name: Pull my repository
             uses: actions/checkout@v6
           - name: Collection info
-            run: ls -la
+            run: |
+              ls -la
+              lsb_release -a
     
     repo_info:
         needs: pull_repo
