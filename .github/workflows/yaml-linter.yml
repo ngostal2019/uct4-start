@@ -16,3 +16,11 @@ jobs:
             uses: actions/checkout@v6
           - name: Collection info
             run: ls -la
+    
+    repo_info:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Generating repos data
+              env:
+                GITHUB_CONTEXT: ${{ toJSON(github) }}
+              run: echo "$GITHUB_CONTEXT"
