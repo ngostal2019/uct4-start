@@ -18,6 +18,7 @@ jobs:
             run: ls -la
     
     repo_info:
+        needs: pull_repo
         runs-on: ubuntu-latest
         steps:
             - name: Generating repos data
