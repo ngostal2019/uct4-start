@@ -48,7 +48,8 @@ whoami
 ```
 
 > [!TIP]
->> Say hi to me and I will be **`nice`** with you! :blush:
+>> :warning:  **Warning**: Do not push before commiting.
+>>> Say hi to me and I will be **`nice`** with you! :blush:
 
 #### Link to one of my Github Repository
 
