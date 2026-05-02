@@ -33,7 +33,7 @@ jobs:
             echo "commit_sha=$LATEST_COMMIT_SHA" >> $GITHUB_OUTPUT
   
   consume-info:
-    # needs: 
+    needs: generate-info
     runs-on: ubuntu-latest
     steps:
       - name: Testing
