@@ -15,6 +15,7 @@ jobs:
   generate-info:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v6
       - name: Purpose
         run: echo "Generating repository information…"
       - name: Set outputs for date and commit SHA
