@@ -10,7 +10,24 @@ on:
       - main
   
   workflow_dispatch:
-
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+      tags:
+        description: 'Test scenario tags'
+        required: false
+        type: boolean
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
 jobs:
   generate-info:
     runs-on: ubuntu-latest
@@ -53,3 +70,15 @@ jobs:
     steps:
       - name: Display final report
         run: echo "Workflow completed successfully on ${{ needs.consume-info.outputs.consume_current_date }} using commit ${{ needs.consume-info.outputs.consume_commit_sha }}"
+
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          LEVEL: ${{ inputs.logLevel }}
+          TAGS: ${{ inputs.tags }}
+          ENVIRONMENT: ${{ inputs.environment }}
+        run: |
+          echo "Log level: $LEVEL"
+          echo "Tags: $TAGS"
+          echo "Environment: $ENVIRONMENT"
