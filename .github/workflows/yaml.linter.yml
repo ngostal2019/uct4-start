@@ -11,7 +11,7 @@ jobs:
   pull_repo:
     runs-on: ubuntu-latest
     steps:
-      - name: Collecting info
+      - name: Collection info
       - run: |
            ls_release -a
            whoami
